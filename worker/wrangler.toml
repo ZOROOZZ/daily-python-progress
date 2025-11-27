@@ -1,0 +1,12 @@
+name = "python-executor"
+main = "src/entry.py"
+compatibility_date = "2025-11-27" # Use the date the installer put, or a recent one
+
+# --- CRITICAL: Python Flag ---
+compatibility_flags = ["python_workers"]
+
+# --- CRITICAL: D1 Binding ---
+[[d1_databases]]
+binding = "LOG_DB"  # The name used in your Python code (entry.py)
+database_name = "daily_program_logs"
+database_id = "389f31c8-1040-4ac0-a436-41e960ec8c6c" # <-- REPLACE THIS
