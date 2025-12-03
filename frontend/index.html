@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Daily Progress</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        #output { 
+            white-space: pre-wrap; 
+            padding: 15px; 
+            border: 1px solid #ccc; 
+            background-color: #f9f9f9; 
+            margin-top: 10px;
+        }
+        .status-success { color: green; font-weight: bold; }
+        .status-error { color: red; font-weight: bold; }
+        h2 { margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Python Daily Progress Viewer 🐍</h1>
+    <p>Click a program to run it on the Cloudflare Edge and view the result.</p>
+
+    <h2>Programs</h2>
+    <a href="#" onclick="runProgram('day1/hello_world.py'); return false;">[DAY 1] hello_world.py (Success Test)</a><br>
+    <a href="#" onclick="runProgram('day2/example.py'); return false;">[DAY 2] example.py (Error/Logic Test)</a><br>
+    
+    <hr>
+    <h2>Execution Output</h2>
+    <div id="output">Click a link above to run a program.</div>
+
+    <script>
+        // *******************************************************************
+        // *** REPLACE THIS URL with your deployed Worker URL! ***
+        // *******************************************************************
+        // You will get this URL after running 'wrangler deploy' in the next step.
+        const WORKER_URL = "https://python-executor.mehul-112.workers.dev";
+        // *******************************************************************
+
+        const outputElement = document.getElementById('output');
+
+        async function runProgram(path) {
+            outputElement.style.color = 'black';
+            outputElement.textContent = `Running ${path}... Please wait.`;
+            
+            try {
+                const response = await fetch(`${WORKER_URL}?path=${path}`);
+                const data = await response.json();
+
+                if (data.status === 'Error') {
+                    outputElement.className = 'status-error';
+                    outputElement.textContent = `*** EXECUTION ERROR in ${data.program} ***\n\n${data.output}`;
+                } else if (data.output) {
+                    outputElement.className = 'status-success';
+                    outputElement.textContent = `*** SUCCESS: ${data.program} ***\n\n${data.output}`;
+                } else {
+                    outputElement.className = '';
+                    outputElement.textContent = `*** SUCCESS: ${data.program} ***\n\nProgram ran, but produced no output.`;
+                }
+            } catch (e) {
+                outputElement.className = 'status-error';
+                outputElement.textContent = `--- NETWORK ERROR ---\nCould not connect to the Worker. Check your WORKER_URL in index.html. Error: ${e.message}`;
+            }
+        }
+    </script>
+</body>
+</html>
