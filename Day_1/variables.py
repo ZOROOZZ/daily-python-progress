@@ -1,3 +1,7 @@
 # New Python file
 
-print("Hello, World!")
+x = 5
+y = "Mehul"
+
+print(x)
+print(y)
