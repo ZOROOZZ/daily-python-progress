@@ -4,4 +4,4 @@
 </li></ul><b>3. Comments</b>
 <br><ul><li><span style="font-size: 0.875rem;">Python has a commenting capability for the purpose of in-code documentation.
 
-Comments start with a #, and Python will render the rest of the line as a comment.</span></li></ul><div>4. Statments</div></div></div><div><ul><li>A Computer Program is a list of "Instruction" to be "executed" by a computer.</li><li>In a programming language, these programming instructions are called sratements.</li></ul></div>
+Comments start with a #, and Python will render the rest of the line as a comment.</span></li></ul><div>4. Statments</div></div></div><div><ul><li>A Computer Program is a list of "Instruction" to be "executed" by a computer.</li><li>In a programming language, these programming instructions are called sratements.</li></ul><div><br></div></div>
