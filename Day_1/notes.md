@@ -1,4 +1,4 @@
-m**1. Python Indentation**
+**1. Python Indentation**
 Indentation refers to the spaces at the beginning of a code line.
 
 Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important.
@@ -13,4 +13,4 @@ Python has no command for declaring a variable.
 **3. Comments**
 Python has commenting capability for the purpose of in-code documentation.
 
-Comments start with a #, and Python will render the rest of the line as a comment.
+Comments start with a #, and Python will render the rest of the line as a coment.
