@@ -5,10 +5,8 @@ market_data = [
 ]
 def analyze_stocks(market_data):
     
-    for Ticker in market_data:
-        if trend:up:
+    for stock in market_data:
+        if stock:
             print(f"[Ticker] is going up!")
         else:
             print(f"[Ticker] is going down!")
-            
-            
