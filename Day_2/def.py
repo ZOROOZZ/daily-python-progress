@@ -13,6 +13,3 @@ even_number_list(first_batch)
 
 print("Checking Second Batch: ")
 even_number_list(second_batch)
-            
-        
-    
