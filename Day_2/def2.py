@@ -10,9 +10,4 @@ even_list(first)
 
 even_list(second)
 
-print(even_numbers_only)
-        
-        
-        
-    
-    
+print(even_numbers_only)   
