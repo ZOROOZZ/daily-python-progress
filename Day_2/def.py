@@ -1,3 +1,12 @@
-# New Python file
+def even_number_list(numberlist):
+    for number in numberlist:
+        if number % 2 == 0:
+            print("Even Number")
 
-print("Hello, World!")
+first_batch = [12, 35, 43, 56, 23]
+second_batch = [13, 36, 44, 57, 24]
+
+
+            
+        
+    
