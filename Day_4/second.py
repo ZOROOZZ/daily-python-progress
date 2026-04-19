@@ -1,3 +1,4 @@
-# New Python file
+def triple(x):
+    return x * 3
 
-print("Hello, World!")
+print(triple(2))
